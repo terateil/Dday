@@ -1,8 +1,8 @@
 let todoList = []
 
 function compTodobyDate(a, b){
-    a_time = new Date(a.children[1].innerHTML).getTime()
-    b_time = new Date(b.children[1].innerHTML).getTime()
+    a_time = new Date(a.children[1].className).getTime()
+    b_time = new Date(b.children[1].className).getTime()
     cp = a_time - b_time
     return cp
 }
@@ -24,7 +24,7 @@ function addnewTodo(){
     }
 
     let det = document.getElementsByName("details")[0].value;
-
+////////////////
 
     let tod = document.createElement('section')
     tod.setAttribute("id", "tod")
@@ -36,6 +36,7 @@ function addnewTodo(){
 
     let when = document.createElement('p');
     when.setAttribute("id", "datetime")
+    when.setAttribute("class", whentodo) 
     when.innerHTML = whentodo.slice(0, 10) + "<br>" + whentodo.slice(11, 16)
     tod.appendChild(when)
 
